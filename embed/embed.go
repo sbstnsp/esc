@@ -241,7 +241,6 @@ func (f *_escFile) fillCompressed(gzipLevel int) error {
 
 	f.Compressed = res
 	return nil
-
 }
 
 const (

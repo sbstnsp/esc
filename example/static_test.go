@@ -178,7 +178,7 @@ func testFSReaddir(useLocal bool, t *testing.T) {
 			sort.Strings(tt.wantFileNames)
 
 			if tt.count > -1 {
-				//workaround for case when we have limit, because of different Readdir cannot return in the same order, and nobody garanty ordering for Readdir
+				// workaround for case when we have limit, because of different Readdir cannot return in the same order, and nobody garanty ordering for Readdir
 				if len(fnames) != len(tt.wantFileNames) {
 					t.Errorf("%q. _escLocalFS.Readdir() return different counts of res = %d, want %d", tt.name, len(fnames), len(tt.wantFileNames))
 				}
@@ -208,7 +208,6 @@ func testFSMustString(useLocal bool, t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(fmt.Sprintf("%s:uselocal=%t", tt.name, useLocal), func(t *testing.T) {
-
 			raw, _ := ioutil.ReadFile("../testdata" + tt.name)
 			got := FSMustString(useLocal, tt.name)
 			if strings.Compare(got, string(raw)) != 0 {
@@ -224,7 +223,6 @@ func testFSMustString(useLocal bool, t *testing.T) {
 			if strings.Compare(got, got2) != 0 {
 				t.Errorf("%q. FSString() must return the same as FSMustString, given = %v, must be = %v", tt.name, got2, got)
 			}
-
 		})
 	}
 }

@@ -25,7 +25,6 @@ func Test_canonicFileName(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-
 			if got := canonicFileName(tt.fname, tt.prefix); got != tt.want {
 				t.Errorf("%q. canonicFileName() = %v, want %v", tt.name, got, tt.want)
 			}
